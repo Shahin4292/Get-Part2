@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_part_2/controller/controller.dart';
+import '../controller/home_controller.dart';
 
-class HomeView extends StatelessWidget {
-  HomeView({super.key});
-
-  final controller = Get.put(CountController());
+class HomeView extends GetView<HomeController> {
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("object");
           controller.increment();
         },
         child: const Icon(Icons.add),
