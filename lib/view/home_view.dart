@@ -20,6 +20,7 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Get2"),
+
       ),
       body: Column(
         children: [
