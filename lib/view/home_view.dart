@@ -5,7 +5,7 @@ import 'package:get_part_2/controller/controller.dart';
 class HomeView extends StatelessWidget {
   HomeView({super.key});
 
-  final dependency = Get.put(CountController());
+  final controller = Get.put(CountController());
 
   @override
   Widget build(BuildContext context) {
@@ -13,27 +13,27 @@ class HomeView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           print("object");
-          dependency.increment();
+          controller.increment();
         },
         child: const Icon(Icons.add),
       ),
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Get2"),
-
       ),
-      body: Column(
-        children: [
-          GetX<CountController>(
-            builder: (controller) {
-              return Center(
-                child: Text(
-                  controller.counter.toString(),
-                ),
-              );
-            },
-          )
-        ],
+      body: Obx(
+        () => Column(
+          children: [
+            Text(
+              controller.counter.toString(),
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  controller.decrement();
+                },
+                child: const Icon(Icons.remove))
+          ],
+        ),
       ),
     );
   }
