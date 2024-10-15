@@ -18,20 +18,25 @@ class HomeView extends GetView<HomeController> {
         centerTitle: true,
         title: const Text("Get2"),
       ),
-      body: Obx(
-        () => Column(
-          children: [
-            Text(
-              controller.counter.toString(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Obx(
+                () => Column(
+              children: [
+                Text(
+                  controller.counter.toString(),
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      controller.decrement();
+                    },
+                    child: const Icon(Icons.remove))
+              ],
             ),
-            ElevatedButton(
-                onPressed: () {
-                  controller.decrement();
-                },
-                child: const Icon(Icons.remove))
-          ],
-        ),
-      ),
+          ),
+        ],
+      )
     );
   }
 }

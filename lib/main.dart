@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_part_2/app/module/home/view/home_view.dart';
+import 'package:get_part_2/app/routes/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomeView(),
+      initialRoute: AppRoutes.initialRoutes,
+      getPages: AppRoutes.routes,
     );
   }
 }
