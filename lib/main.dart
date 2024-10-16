@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_part_2/app/module/home/view/home_view.dart';
 import 'package:get_part_2/app/routes/app_routes.dart';
 
 void main() {
